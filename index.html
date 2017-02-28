@@ -1,86 +1,129 @@
-<!-- ##########################################
-# Project 6: Neighorhood Map (Udacity Full Stack Web Developer Nanodegree)
-# Date Started: 02/01/2017
-# Date Completed: 02/25/2017
-# Submitted by: Fang Wang
-##########################################
-
-######################################## Media File #############
-# Description: This is the main html file for Neighborhood map
-#              Location Lists View, Map View, and Wikipedia news View
-################################################################# -->
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>South Bay Neighborhood Map</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
+<html lang="en">
+<head>
+  <!--meta-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <div class="container-fluid">
-            <div class="row">
-                <section class="section-nav col-md-3">
-                    <div class="row site-header">
-                        <div class="col-sm-12">
-                            <header class="">
-                                <h2>Hiking Trails Map</h2>
-                                <form>
-                                  <div class="form-group">
-                                        <label for="searchbar">Filter Trails by Name</label>
-                                        <div class="search" id="search">
-                                        <input type="text" id="search-box" name="search-box" class="search-box" data-bind="textInput: searchTerm, valueUpdate: 'afterkeydown'"  placeholder="Name of Trails">
-                                      </div>
-                                  </div>
-                                </form>
-                            </header>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                          <div class="list" id="list">
-                      			<ul class="results" id="results" data-bind="foreach: filteredList">
-                      				<li class="place" id="place" data-bind="text: name, click: bounce"></li>
-                      			</ul>
-                      		</div>
-                        </div>
-                    </div>
-                    <nav>
+  <!-- Title-->
+  <title>Fang Wang - Full Stack Developer</title>
 
-                    </nav>
-                </section>
-                <section class="col-md-6 section-content">
-                <div class="row">
-                    <div class="map" id="map">
-                      Loading Google Maps Failed. Please Try Again.
-                    </div>
-                </div>
-                <footer id="info">
-            			<p>Written by <a href="https://github.com/fwangboulder">By Fang Wang</a></p>
-            			<p> <a href="http://github.com/fwangboulder/project_neighborhood_map">Project GitHub Link</a></p>
-            		</footer>
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-                </section>
-                <section class= "col-md-3 section-content">
-                  <div class="row">
-                    <div class="wikipedia-container">
-                      <h3 id="wikipedia-header">Relevant Location</br> Wikipedia Links</h3>
-                      <ul id="wikipedia-links" data-bind="foreach: wikiElem">
-                        <li data-bind= "html: $data"></b></li>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 
-                      </ul>
-                    </div>
-                  </div>
-                </section>
+</head>
+<body>
+
+  <!--grid-->
+  <div class="container">
+
+    <!--first row, two columns-->
+    <div class="row">
+      <div class="col-md-6">
+        <a href="https://github.com/fwangboulder">
+        <img src="imgs/Fang.jpg" class="profile-logo img-circle img-responsive" alt="Fang Wang Picture" width="150" height="150">
+        </a>
+        <div class="profile-email">
+          <p>Email: fwangboulder@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="profile col-md-6">
+        <h1 class="profile-name">Fang Wang</h1>
+        <h3 class="profile-job">Full Stack Web Developer</h3>
+      </div>
+
+    </div>
+
+
+    <!--second row, one column-->
+    <div class="row">
+      <div class="profile-view col-md-12">
+        <img src='imgs/view.jpg' alt='view' class='center' width="1200" height="900">
+      </div>
+    </div>
+
+    <!--third row, one column-->
+    <div class="col-md-12">
+      <h2 class="profile-feature">Featured Work</h2>
+        <p>Udacity: Full Stack Developer Nanodegree Projects</p>
+    </div>
+
+    <!--fourth row, 4 columns-->
+    <div class="row">
+
+      <article class="col-md-4">
+        <a href='https://github.com/fwangboulder/Project_Multi_User_Blog'>
+        <img src='imgs/project1.png' alt='project1' class="image-responsive" width="280" height="200">
+        </a>
+        <div class="project">
+          <h3 class="project-title">Multi User Blog</h3>
+          <a href="https://github.com/fwangboulder/Project_Multi_User_Blog" class="project-link" target="_blank"><i>Click to View in GitHub</i></a>
+        </div>
+
+      </article>
+      <article class="col-md-4">
+        <a href='https://github.com/fwangboulder/Project_Tournament_Results'>
+        <img src='imgs/project2.png' alt='project2' class="image-responsive" width="280" height="200">
+        </a>
+        <div class="project">
+          <h3 class="project-title">Tournament Results</h3>
+          <a href="https://github.com/fwangboulder/Project_Tournament_Results" class="project-link" target="_blank"><i>Click to View in GitHub</i></a>
+        </div>
+      </article>
+
+      <article class="col-md-4">
+        <a href='https://github.com/fwangboulder/Project_Item_Catalog'>
+        <img src='imgs/project3.png' alt='project3' class="image-responsive" width="280" height="200">
+        </a>
+        <div class="project">
+          <h3 class="project-title">Item Catalog</h3>
+          <a href="https://github.com/fwangboulder/Project_Item_Catalog" class="project-link" target="_blank"><i>Click to View in GitHub</i></a>
+        </div>
+      </article>
+
+    </div>
+
+    <!--fourth row, 3 columns-->
+    <div class="row">
+        <article class="col-md-4">
+          <a href='https://github.com/fwangboulder/Project_Neighborhood_Map'>
+          <img src='imgs/project4.png' alt='project4' class="image-responsive" width="280" height="200">
+          </a>
+          <div class="project">
+            <h3 class="project-title">Neighborhood Map</h3>
+            <a href="https://github.com/fwangboulder/Project_Neighborhood_Map" class="project-link" target="_blank"><i>Click to View in  GitHub</i></a>
+          </div>
+        </article>
+
+        <article class="col-md-4">
+          <a href='https://github.com/fwangboulder/Project_Design_a_Game'>
+          <img src='imgs/project5.png' alt='project5' class="image-responsive" width="280" height="200">
+          </a>
+          <div class="project">
+            <h3 class="project-title">Design a Game</h3>
+            <a href="https://github.com/fwangboulder/Project_Design_a_Game" class="project-link" target="_blank"><i>Click to View in  GitHub</i></a>
+          </div>
+        </article>
+
+        <article class="col-md-4">
+          <a href='https://github.com/fwangboulder/Project_Linux_Server_Configuration'>
+          <img src='imgs/project6.png' alt='project6' class="image-responsive" width="280" height="200">
+          </a>
+          <div class="project">
+            <h3 class="project-title">Linux Server Config</h3>
+            <a href="https://github.com/fwangboulder/Project_Linux_Server_Configuration" class="project-link" target="_blank"><i>Click to View in  GitHub</i></a>
+          </div>
+        </article>
 
         </div>
-  <script src='bower_components/knockout/dist/knockout.js'></script>
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src='js/app.js'></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBis7Zq8CzG7Bs00rnfJlSqEBNJ123x1Ak&callback=startApp&libraries=places" onerror="errorHandling()"></script>
+      </div>
+
 
 </body>
-
 </html>
